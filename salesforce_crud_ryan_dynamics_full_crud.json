@@ -1,0 +1,3426 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Salesforce CRUD API (Full Metadata + Required Fields)",
+    "version": "1.3.0",
+    "description": "This API specification is created for the **Ryan Project** and is intended to be used by the **Dynamics Team** to push data into Salesforce CRM.\n\nIt provides endpoints to create standard Salesforce records such as **Account**, **Contact**, **Opportunity**, and **Lead**, including detailed field-level metadata and required field validation. \n\nAll endpoints require a valid **OAuth 2.0 Bearer token** for authentication. Ensure proper token retrieval before performing CRUD operations.\n\nThis documentation enables seamless integration between Dynamics 365 and Salesforce, supporting real-time or batch-based data exchange."
+  },
+  "paths": {
+    "/services/data/v59.0/sobjects/Account": {
+      "post": {
+        "summary": "Create Account",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "description": "Account ID",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "IsDeleted": {
+                    "description": "Deleted",
+                    "type": "boolean"
+                  },
+                  "MasterRecordId": {
+                    "description": "Account",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Name": {
+                    "description": "Account Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Type": {
+                    "description": "Account Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "RecordTypeId": {
+                    "description": "Account Record Type",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "ParentId": {
+                    "description": "Parent Account",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "BillingAddress": {
+                    "description": "Billing Address",
+                    "type": "string"
+                  },
+                  "ShippingAddress": {
+                    "description": "Shipping Address",
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "description": "Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "AccountNumber": {
+                    "description": "Client Number",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "Website": {
+                    "description": "Website",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "PhotoUrl": {
+                    "description": "Photo URL",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Industry": {
+                    "description": "Industry (Legacy)",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "NumberOfEmployees": {
+                    "description": "Employee Count (D&B)",
+                    "type": "string"
+                  },
+                  "Description": {
+                    "description": "Description",
+                    "type": "string",
+                    "maxLength": 32000
+                  },
+                  "CurrencyIsoCode": {
+                    "description": "Account Currency",
+                    "type": "string",
+                    "maxLength": 3
+                  },
+                  "OwnerId": {
+                    "description": "Account Owner",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "CreatedDate": {
+                    "description": "Created Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "CreatedById": {
+                    "description": "Created By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "LastModifiedDate": {
+                    "description": "Last Modified Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastModifiedById": {
+                    "description": "Last Modified By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "SystemModstamp": {
+                    "description": "System Modstamp",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastActivityDate": {
+                    "description": "Last Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastViewedDate": {
+                    "description": "Last Viewed Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastReferencedDate": {
+                    "description": "Last Referenced Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "UserRecordAccessId": {
+                    "description": "Object Access Level",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Jigsaw": {
+                    "description": "Data.com Key",
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "JigsawCompanyId": {
+                    "description": "Jigsaw Company Id",
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "AccountSource": {
+                    "description": "Lead Source",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "SicDesc": {
+                    "description": "SIC Description",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "IsPriorityRecord": {
+                    "description": "Important",
+                    "type": "boolean"
+                  },
+                  "qualtrics__NPS_Date__c": {
+                    "description": "NPS Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "qualtrics__Net_Promoter_Score__c": {
+                    "description": "Net Promoter Score",
+                    "type": "string"
+                  },
+                  "LID__LinkedIn_Company_Id__c": {
+                    "description": "LinkedIn Company Id",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Accounts__c": {
+                    "description": "#Accounts",
+                    "type": "string"
+                  },
+                  "DXP_Hierarchy_Classification__c": {
+                    "description": "DXP Hierarchy Classification",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Fortune_1000_Rank__c": {
+                    "description": "Fortune 1000 Rank",
+                    "type": "string"
+                  },
+                  "Is_Headquarters__c": {
+                    "description": "Is Headquarters?",
+                    "type": "boolean"
+                  },
+                  "mvp_Fiscal_Year_Ends__c": {
+                    "description": "Fiscal Year End (D&B)",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "Statement_Contact__c": {
+                    "description": "Statement Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Tax_Direct_Expiration_Date__c": {
+                    "description": "REMOVE Tax Direct Expiration Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "UPC__c": {
+                    "description": "#UPC",
+                    "type": "string"
+                  },
+                  "Ultimate_Parent_ID__c": {
+                    "description": "Ultimate Parent ID",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "mvp_Account_Priority__c": {
+                    "description": "Priority",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Affiliated_Revenue__c": {
+                    "description": "Affiliated Revenue",
+                    "type": "boolean"
+                  },
+                  "mvp_Annual_Revenue_CA__c": {
+                    "description": "Annual Revenue CA",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Anti_Fraud_Corruption_Check__c": {
+                    "description": "Anti-Fraud & Corruption Check",
+                    "type": "boolean"
+                  },
+                  "mvp_Audit_Firm__c": {
+                    "description": "Audit Firm",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_Client_Conversion_Date__c": {
+                    "description": "Client Conversion Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Client_Manager__c": {
+                    "description": "Client Manager",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Client_Principal__c": {
+                    "description": "Client Principal",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "DNBoptimizer__DNB_D_U_N_S_Number__c": {
+                    "description": "Account DUNS Number (D&B)",
+                    "type": "string",
+                    "maxLength": 9
+                  },
+                  "DNBoptimizer__DnBCompanyRecord__c": {
+                    "description": "AccountToDnB",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_DNB_Assets_EUR__c": {
+                    "description": "DNB Assets EUR",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_DNB_Assets_GBP__c": {
+                    "description": "DNB Assets GBP",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_DNB_Assets__c": {
+                    "description": "DNB Assets",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.001
+                  },
+                  "mvp_DNB_Revenue_GBP__c": {
+                    "description": "DNB Revenue GBP",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_DNB_Revenue_USD__c": {
+                    "description": "Remove DNB Revenue USD",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_DUNS_Number__c": {
+                    "description": "DUNS Number",
+                    "type": "string",
+                    "maxLength": 25
+                  },
+                  "mvp_Dynamics_Id__c": {
+                    "description": "Dynamics Id",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "mvp_Focus__c": {
+                    "description": "Focus",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Fortune_1000_Account__c": {
+                    "description": "Fortune 1000 Account",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Headquarters__c": {
+                    "description": "Headquarters",
+                    "type": "boolean"
+                  },
+                  "mvp_Hierarchal_Level__c": {
+                    "description": "Hierarchal Level",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Inactive_Client_Date__c": {
+                    "description": "Inactive Client Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Incentive_Split_Total__c": {
+                    "description": "Incentive Split Total",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Industry_Group__c": {
+                    "description": "REMOVE Industry Group",
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "mvp_Industry_Sector__c": {
+                    "description": "REMOVE Industry Sector",
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "mvp_Intercompany__c": {
+                    "description": "Intercompany",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Last_Completed_Engagement_Date__c": {
+                    "description": "Most Recent Fulfilled Engagement Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Last_Tax_Review_Date__c": {
+                    "description": "REMOVE Last Tax Review Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Legacy_Client_Number__c": {
+                    "description": "Legacy Client Number",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "mvp_MP_1_Incentive_Split__c": {
+                    "description": "MP 1 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_2_Incentive_Split__c": {
+                    "description": "MP 2 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_3_Incentive_Split__c": {
+                    "description": "MP 3 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_4_Incentive_Split__c": {
+                    "description": "MP 4 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_5_Incentive_Split__c": {
+                    "description": "MP 5 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Market_Capitalization__c": {
+                    "description": "Market Capitalization",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.0001
+                  },
+                  "mvp_Marketing_Professional_2__c": {
+                    "description": "Marketing Professional 2",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Marketing_Professional_3__c": {
+                    "description": "Marketing Professional 3",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Marketing_Professional_4__c": {
+                    "description": "Marketing Professional 4",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Marketing_Professional_5__c": {
+                    "description": "Marketing Professional 5",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Next_Call_Date__c": {
+                    "description": "Next Call Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Number_of_Associated_Tax_Direct__c": {
+                    "description": "REMOVE No of Associated Tax Direct Cases",
+                    "type": "string"
+                  },
+                  "mvp_Originating_Account_Request__c": {
+                    "description": "Originating Account Request",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Originating_Lead_Creator__c": {
+                    "description": "Originating Lead Creator",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Ownership_Code__c": {
+                    "description": "Ownership Code",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Payment_Terms__c": {
+                    "description": "Payment Terms",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Previous_Client_Principal__c": {
+                    "description": "Previous Client Principal",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Previous_MP_1_Incentive_Split__c": {
+                    "description": "Previous MP 1 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Previous_MP_2_Incentive_Split__c": {
+                    "description": "Previous MP 2 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Previous_MP_3_Incentive_Split__c": {
+                    "description": "Previous MP 3 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Previous_MP_4_Incentive_Split__c": {
+                    "description": "Previous MP 4 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Previous_MP_5_Incentive_Split__c": {
+                    "description": "Previous MP 5 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Previous_Marketing_Professional_2__c": {
+                    "description": "Previous Marketing Professional 2",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Previous_Marketing_Professional_3__c": {
+                    "description": "Previous Marketing Professional 3",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Previous_Marketing_Professional_4__c": {
+                    "description": "Previous Marketing Professional 4",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Previous_Marketing_Professional_5__c": {
+                    "description": "Previous Marketing Professional 5",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Previous_Name__c": {
+                    "description": "Previous Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Previous_Primary_Marketing_Pro__c": {
+                    "description": "Previous Primary Marketing Professional",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Primary_Contact__c": {
+                    "description": "Primary Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Primary_Marketing_Professional__c": {
+                    "description": "Primary Marketing Professional",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Primary_NAICS_Code_Label__c": {
+                    "description": "Primary NAICS Code Label (D&B)",
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "mvp_Primary_NAICS_Code__c": {
+                    "description": "Primary NAICS Code (D&B)",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "mvp_Region_Canada__c": {
+                    "description": "REMOVE Region - Canada",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Reported_Currency__c": {
+                    "description": "Reported Currency (D&B)",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "mvp_Ryan_Industry__c": {
+                    "description": "REMOVE Ryan Industry",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_Same_as_Main_Address__c": {
+                    "description": "Same as Main Address",
+                    "type": "boolean"
+                  },
+                  "mvp_Send_Statements__c": {
+                    "description": "Send Statements & Dunning Notices",
+                    "type": "boolean"
+                  },
+                  "mvp_SharePoint_URL__c": {
+                    "description": "SharePoint URL",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Shipping_Phone__c": {
+                    "description": "Shipping Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "mvp_Software_BD__c": {
+                    "description": "Software BD",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Status_Reason__c": {
+                    "description": "Status Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Status__c": {
+                    "description": "Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Strength_of_Relationship__c": {
+                    "description": "Strength of Relationship",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Survey_Quarter__c": {
+                    "description": "Survey Segment",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Tax_Direct_Comments__c": {
+                    "description": "REMOVE Tax Direct Comments",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Territory__c": {
+                    "description": "Territory",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Total_Open_Deals__c": {
+                    "description": "Total Open Deals",
+                    "type": "string"
+                  },
+                  "mvp_Total_Open_Revenue__c": {
+                    "description": "Total Open Estimated Fees",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Ultimate_Parent_Name__c": {
+                    "description": "Ultimate Parent Hyperlink",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "mvp_Ultimate_Parent_Tier__c": {
+                    "description": "Ultimate Parent Tier",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "mvp_User_is_CP__c": {
+                    "description": "User is CP",
+                    "type": "boolean"
+                  },
+                  "mvp_User_is_Owner__c": {
+                    "description": "User is Owner",
+                    "type": "boolean"
+                  },
+                  "mvp_dnb_primarynaics2012__c": {
+                    "description": "dnb_primarynaics2012",
+                    "type": "string",
+                    "maxLength": 10
+                  },
+                  "mvp_dnb_primaryuk2007sic__c": {
+                    "description": "dnb_primaryuk2007sic",
+                    "type": "string",
+                    "maxLength": 10
+                  },
+                  "mvp_do_not_allow_Bulk_Postal_Mail__c": {
+                    "description": "Do not allow Bulk Mails",
+                    "type": "boolean"
+                  },
+                  "mvp_do_not_allow_Bulk_emails__c": {
+                    "description": "Do not allow Bulk Emails",
+                    "type": "boolean"
+                  },
+                  "mvp_Open_Deals__c": {
+                    "description": "Open Deals",
+                    "type": "string"
+                  },
+                  "mvp_Won_Opportunity_Count__c": {
+                    "description": "Won Opportunity Count",
+                    "type": "string"
+                  },
+                  "DOZISF__ZoomInfo_Enrich_Status__c": {
+                    "description": "ZoomInfo Enrich Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_List_Category__c": {
+                    "description": "List Category",
+                    "type": "string",
+                    "maxLength": 4099
+                  },
+                  "DOZISF__ZoomInfo_First_Updated__c": {
+                    "description": "ZoomInfo First Updated",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "iSell__OSKeyID__c": {
+                    "description": "D&B ID",
+                    "type": "string",
+                    "maxLength": 16
+                  },
+                  "UltimateParentNameText__c": {
+                    "description": "Ultimate Parent Name Text",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "UltimateParentAccountOpenDeals__c": {
+                    "description": "Ultimate Parent Account Open Deals",
+                    "type": "string"
+                  },
+                  "GlobalUltimateDUNSNumber__c": {
+                    "description": "Global Ultimate DUNS Number (D&B)",
+                    "type": "string",
+                    "maxLength": 25
+                  },
+                  "DomesticUltimateDUNSNumber__c": {
+                    "description": "Domestic Ultimate DUNS Number (D&B)",
+                    "type": "string",
+                    "maxLength": 25
+                  },
+                  "DOZISF__ZoomInfo_Id__c": {
+                    "description": "ZoomInfo Company ID",
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "temp_DynLength__c": {
+                    "description": "temp_DynLength",
+                    "type": "string"
+                  },
+                  "DOZISF__ZoomInfo_InboxAI_ID__c": {
+                    "description": "ZoomInfo InboxAI ID",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "temp_isLegacy__c": {
+                    "description": "temp_isLegacy",
+                    "type": "boolean"
+                  },
+                  "DNBConnect__D_B_Connect_Company_Profile__c": {
+                    "description": "D&B Connect Company Profile",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "DNBConnect__D_B_Match_Confidence_Code__c": {
+                    "description": "D&B Match Confidence Code",
+                    "type": "string"
+                  },
+                  "DNBConnect__D_B_Match_Data_Profile__c": {
+                    "description": "D&B Match Data Profile",
+                    "type": "string",
+                    "maxLength": 28
+                  },
+                  "DNBConnect__D_B_Match_Grade__c": {
+                    "description": "D&B Match Grade",
+                    "type": "string",
+                    "maxLength": 11
+                  },
+                  "DNBConnect__D_B_Match_Type__c": {
+                    "description": "D&B Match Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DNBConnect__D_B_Name_Match_Score__c": {
+                    "description": "D&B Name Match Score",
+                    "type": "string"
+                  },
+                  "DNBConnect__dunsTradedUp__c": {
+                    "description": "D-U-N-S Traded Up",
+                    "type": "boolean"
+                  },
+                  "DNBConnect__matchedDuns__c": {
+                    "description": "Matched D-U-N-S",
+                    "type": "string",
+                    "maxLength": 9
+                  },
+                  "DOZISF__ZoomInfo_Last_Updated__c": {
+                    "description": "ZoomInfo Last Updated",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Gong__Gong_Count__c": {
+                    "description": "Gong Count",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "Name"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Account created successfully"
+          }
+        }
+      }
+    },
+    "/services/data/v59.0/sobjects/Opportunity": {
+      "post": {
+        "summary": "Create Opportunity",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "description": "Opportunity ID",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "IsDeleted": {
+                    "description": "Deleted",
+                    "type": "boolean"
+                  },
+                  "AccountId": {
+                    "description": "Account Name",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "RecordTypeId": {
+                    "description": "Opportunity Record Type",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Name": {
+                    "description": "Opportunity Name",
+                    "type": "string",
+                    "maxLength": 120
+                  },
+                  "Description": {
+                    "description": "Description",
+                    "type": "string",
+                    "maxLength": 32000
+                  },
+                  "StageName": {
+                    "description": "Stage",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Amount": {
+                    "description": "Potential Fees",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "Probability": {
+                    "description": "Probability (%)",
+                    "type": "number",
+                    "maximum": 999.0
+                  },
+                  "CloseDate": {
+                    "description": "Estimated Close Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Type": {
+                    "description": "Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "NextStep": {
+                    "description": "Next Step",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "LeadSource": {
+                    "description": "Lead Source",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "IsClosed": {
+                    "description": "Closed",
+                    "type": "boolean"
+                  },
+                  "IsWon": {
+                    "description": "Won",
+                    "type": "boolean"
+                  },
+                  "ForecastCategory": {
+                    "description": "Forecast Category",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "ForecastCategoryName": {
+                    "description": "Forecast Category",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "CurrencyIsoCode": {
+                    "description": "Billing Currency",
+                    "type": "string",
+                    "maxLength": 3
+                  },
+                  "CampaignId": {
+                    "description": "Marketing Campaign",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "HasOpportunityLineItem": {
+                    "description": "Has Line Item",
+                    "type": "boolean"
+                  },
+                  "Pricebook2Id": {
+                    "description": "Price Book",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "OwnerId": {
+                    "description": "Opportunity Owner",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "CreatedDate": {
+                    "description": "Created Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "CreatedById": {
+                    "description": "Created By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "LastModifiedDate": {
+                    "description": "Last Modified Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastModifiedById": {
+                    "description": "Last Modified By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "SystemModstamp": {
+                    "description": "System Modstamp",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastActivityDate": {
+                    "description": "Last Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "PushCount": {
+                    "description": "Push Count",
+                    "type": "string"
+                  },
+                  "LastStageChangeDate": {
+                    "description": "Last Stage Change Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Fiscal": {
+                    "description": "Fiscal Period",
+                    "type": "string",
+                    "maxLength": 6
+                  },
+                  "ContactId": {
+                    "description": "Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "LastViewedDate": {
+                    "description": "Last Viewed Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastReferencedDate": {
+                    "description": "Last Referenced Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "UserRecordAccessId": {
+                    "description": "Object Access Level",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "SyncedQuoteId": {
+                    "description": "Synced Quote",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "ContractId": {
+                    "description": "Primary Contract",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "HasOpenActivity": {
+                    "description": "Has Open Activity",
+                    "type": "boolean"
+                  },
+                  "HasOverdueTask": {
+                    "description": "Has Overdue Task",
+                    "type": "boolean"
+                  },
+                  "LastAmountChangedHistoryId": {
+                    "description": "Last Potential Fees Changed History",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "LastCloseDateChangedHistoryId": {
+                    "description": "Last Estimated Close Date Changed History",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "LID__CurrentGenerators__c": {
+                    "description": "Current Generator(s)",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "Loss_Reason__c": {
+                    "description": "Loss Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "LID__DeliveryInstallationStatus__c": {
+                    "description": "Delivery/Installation Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "LID__Is_Influenced__c": {
+                    "description": "Is_Influenced",
+                    "type": "boolean"
+                  },
+                  "LID__LinkedIn_Company_Id__c": {
+                    "description": "LinkedIn Company Id",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "LID__MainCompetitors__c": {
+                    "description": "Main Competitor(s)",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "LID__My_DateTime__c": {
+                    "description": "My DateTime",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LID__My_Geolocation__c": {
+                    "description": "My Geolocation",
+                    "type": "string"
+                  },
+                  "LID__OrderNumber__c": {
+                    "description": "Order Number",
+                    "type": "string",
+                    "maxLength": 8
+                  },
+                  "LID__TrackingNumber__c": {
+                    "description": "Tracking Number",
+                    "type": "string",
+                    "maxLength": 12
+                  },
+                  "Annual_Cost__c": {
+                    "description": "REMOVE Annual Cost",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "Automation_Objectives__c": {
+                    "description": "Automation Objectives",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Billing_Coordinator__c": {
+                    "description": "Billing Coordinator",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Campaign_Name__c": {
+                    "description": "Marketing Campaign",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "Challenges__c": {
+                    "description": "Challenges",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Client_Side_Approval__c": {
+                    "description": "Client Side Approval",
+                    "type": "boolean"
+                  },
+                  "Date_Redlines_Sent_to_Legal__c": {
+                    "description": "Remove Date Redlines Sent to Legal",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Days_to_Closing__c": {
+                    "description": "Days to Closing",
+                    "type": "string"
+                  },
+                  "Demo_Date__c": {
+                    "description": "Demo Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "IT_Approval__c": {
+                    "description": "IT Approval",
+                    "type": "boolean"
+                  },
+                  "Jurisdiction_Abbr__c": {
+                    "description": "Jurisdiction Abbr",
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "MVP_Meeting_Occurred__c": {
+                    "description": "Meeting Occurred",
+                    "type": "boolean"
+                  },
+                  "MVP_Proposal_Delivery_Date__c": {
+                    "description": "Proposal Delivery Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Maintenance_Cap_Percentage__c": {
+                    "description": "Maintenance Cap Percentage",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "Maintenance_End_Date__c": {
+                    "description": "Maintenance End Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Maintenance_Start_Date__c": {
+                    "description": "Maintenance Start Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Outstanding_Items__c": {
+                    "description": "Outstanding Items",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Practice_Area_Abbr__c": {
+                    "description": "Practice Area Abbr.",
+                    "type": "string",
+                    "maxLength": 25
+                  },
+                  "Qualifying_Discussion_Completed__c": {
+                    "description": "Qualifying Discussion Completed",
+                    "type": "boolean"
+                  },
+                  "Questionnaire_Response_Received__c": {
+                    "description": "Questionnaire Response Received",
+                    "type": "boolean"
+                  },
+                  "Questionnaire_Sent__c": {
+                    "description": "Questionnaire Sent",
+                    "type": "boolean"
+                  },
+                  "Redline_Status__c": {
+                    "description": "Redline Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Sales_Campaign_Name__c": {
+                    "description": "Sales Campaign Name",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "Service_Type_Abbr__c": {
+                    "description": "Service Type Abbr",
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "Shipping_Contact__c": {
+                    "description": "Shipping Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Unique_PA__c": {
+                    "description": "#Unique PA",
+                    "type": "string"
+                  },
+                  "X3rd_Party_Marketer__c": {
+                    "description": "3rd Party Marketer",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Acquisition_Incentives_New__c": {
+                    "description": "Incentive Eligible",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Agreement_Status__c": {
+                    "description": "Agreement Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Audit_End_Open__c": {
+                    "description": "Engagement End Date- Open",
+                    "type": "boolean"
+                  },
+                  "mvp_Audit_Start_Open__c": {
+                    "description": "Engagement Start Date - Open",
+                    "type": "boolean"
+                  },
+                  "mvp_Billing_Address__c": {
+                    "description": "Billing Address",
+                    "type": "string",
+                    "maxLength": 32768
+                  },
+                  "mvp_Client_Billing_Contact__c": {
+                    "description": "Client Billing Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Client_Portal_Long_Name__c": {
+                    "description": "Ryan.com Long Name",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "mvp_Client_Portal_Short_Name__c": {
+                    "description": "Ryan.com Short Name",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "mvp_Client_Principal__c": {
+                    "description": "Client Principal",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Closed_Reason_Comments__c": {
+                    "description": "Closed Reason Comments",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Closed_Reason__c": {
+                    "description": "Closed Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Custom_Seminar__c": {
+                    "description": "Custom Seminar",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Customs_Duty_Paid__c": {
+                    "description": "Customs Duty Paid",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Days_in_Stage__c": {
+                    "description": "Days in Stage",
+                    "type": "string"
+                  },
+                  "mvp_Dynamics_Id__c": {
+                    "description": "Dynamics Id",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Engagement_End_Date__c": {
+                    "description": "Engagement End Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Engagement_Letter_Date__c": {
+                    "description": "Engagement Letter Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Engagement_Manager__c": {
+                    "description": "Engagement Manager",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Engagement_Principal__c": {
+                    "description": "Engagement Principal",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Engagement_Start_Date__c": {
+                    "description": "Engagement Start Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Engagement__c": {
+                    "description": "Engagement",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Estimated_Contingency_Fee_Amount__c": {
+                    "description": "Estimated Contingency Fee Amount",
+                    "type": "number",
+                    "maximum": 99999999999999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Finance_Approval_Status__c": {
+                    "description": "Finance Approval Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Finance_Rejection_Comments__c": {
+                    "description": "REMOVE Finance Review Comments",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Finance_Rejection_Reason__c": {
+                    "description": "Finance Rejection Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Follow_Up_Date__c": {
+                    "description": "Follow-Up Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Geographic_Region__c": {
+                    "description": "Geographic Region",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Incentive_Split_Total__c": {
+                    "description": "Incentive Split Total",
+                    "type": "number",
+                    "maximum": 1e+18,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_Initial_Meeting_Complete__c": {
+                    "description": "Initial Meeting Complete",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Initial_Meeting_Date__c": {
+                    "description": "Initial Meeting Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Invoice_Requirements_Completed__c": {
+                    "description": "Invoice Requirements Completed",
+                    "type": "boolean"
+                  },
+                  "mvp_Last_Review_Date__c": {
+                    "description": "Last Review Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Last_Stage_Change_Date__c": {
+                    "description": "Last Stage Change Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Lead_Letter_Date__c": {
+                    "description": "Lead Letter Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Legacy_Engagement_Number__c": {
+                    "description": "Legacy Engagement Number",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "mvp_Local_Jurisdiction__c": {
+                    "description": "Local Jurisdiction",
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "mvp_MP_1_Incentive_Split__c": {
+                    "description": "MP 1 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_2_Incentive_Split__c": {
+                    "description": "MP 2 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_3_Incentive_Split__c": {
+                    "description": "MP 3 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_4_Incentive_Split__c": {
+                    "description": "MP 4 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_5_Incentive_Split__c": {
+                    "description": "MP 5 Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_MP_Changed__c": {
+                    "description": "MP% Changed",
+                    "type": "boolean"
+                  },
+                  "mvp_MSA__c": {
+                    "description": "MSA",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Marketing_Professional_2__c": {
+                    "description": "Marketing Professional 2",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Marketing_Professional_3__c": {
+                    "description": "Marketing Professional 3",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Marketing_Professional_4__c": {
+                    "description": "Marketing Professional 4",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Marketing_Professional_5__c": {
+                    "description": "Marketing Professional 5",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Meeting_Date__c": {
+                    "description": "Meeting Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Moved_Back_Stages_Count__c": {
+                    "description": "Moved Back Stages Count",
+                    "type": "string"
+                  },
+                  "mvp_Negotiations__c": {
+                    "description": "Negotiations",
+                    "type": "boolean"
+                  },
+                  "mvp_Next_Call_Date__c": {
+                    "description": "Next Call Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Opportunity_Priority__c": {
+                    "description": "Priority",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Optional_Identifier__c": {
+                    "description": "Optional Identifier",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_PO_Number__c": {
+                    "description": "PO Number",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_PO_Required__c": {
+                    "description": "PO Required",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_PT_Account_Handler__c": {
+                    "description": "PT Account Handler",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Parent_Account_Id__c": {
+                    "description": "Parent Account Id",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "Outreach_Attributed_Finished_Sequences__c": {
+                    "description": "Attributed Finished Sequences",
+                    "type": "string",
+                    "maxLength": 30000
+                  },
+                  "mvp_Payment_Terms__c": {
+                    "description": "Payment Terms",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "mvp_Plant_Facility__c": {
+                    "description": "Plant/Facility",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_Previous_Stage__c": {
+                    "description": "Previous Stage",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_Primary_Marketing_Professional__c": {
+                    "description": "Primary Marketing Professional",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Qualification_Start_Date__c": {
+                    "description": "Qualification Start Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Outreach_Last_Touch_Contact__c": {
+                    "description": "Last Touch Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Rating__c": {
+                    "description": "Rating",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Re_run_Engagement_Creation__c": {
+                    "description": "Re-run Engagement Creation",
+                    "type": "boolean"
+                  },
+                  "mvp_Reference_Number_1__c": {
+                    "description": "Reference Number 1",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_Remarks__c": {
+                    "description": "Remarks",
+                    "type": "string",
+                    "maxLength": 2000
+                  },
+                  "mvp_Review_Period_Begin_Date__c": {
+                    "description": "Engagement Period Start Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Review_Period_End_Date__c": {
+                    "description": "Engagement Period End Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "samemp1__c": {
+                    "description": "samemp1",
+                    "type": "boolean"
+                  },
+                  "mvp_Seminar_Accepted__c": {
+                    "description": "Seminar Accepted",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Shipping_Address__c": {
+                    "description": "Shipping Address",
+                    "type": "string",
+                    "maxLength": 32768
+                  },
+                  "mvp_Shipping_Method__c": {
+                    "description": "Shipping Method",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Stage_Last_Modified__c": {
+                    "description": "Stage Last Modified",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_State_Code__c": {
+                    "description": "State Code",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Status_Reason__c": {
+                    "description": "Status Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Submit_for_Finance_Approval__c": {
+                    "description": "Submit for Finance Approval",
+                    "type": "boolean"
+                  },
+                  "mvp_Submitted_for_Conversion_By__c": {
+                    "description": "Submitted for Conversion By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Target_Review_Date__c": {
+                    "description": "Target Review Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Tax_Direct_Support_Name__c": {
+                    "description": "Tax Direct Support Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Tax_Issue_Group_Name__c": {
+                    "description": "Sales Campaign Group Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Last_Touch_Sequence__c": {
+                    "description": "Last Touch Sequence",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_VAT_Number__c": {
+                    "description": "VAT Number",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Outreach_Sequence_Attributed__c": {
+                    "description": "Sequence Attributed?",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "mvp_X3rd_Party_Marketer_Incentive_Split__c": {
+                    "description": "3rd Party Marketer Incentive Split",
+                    "type": "number",
+                    "maximum": 99999.0,
+                    "multipleOf": 0.01
+                  },
+                  "mvp_tax_issueid__c": {
+                    "description": "Sales Campaign",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Products_in_New__c": {
+                    "description": "Products in New",
+                    "type": "string"
+                  },
+                  "mvp_Product_Count__c": {
+                    "description": "Product Count",
+                    "type": "string"
+                  },
+                  "mvp_of_Opportunity_Contracts__c": {
+                    "description": "# of Opportunity Contracts",
+                    "type": "string"
+                  },
+                  "mvp_Status__c": {
+                    "description": "Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DaysUntilClose__c": {
+                    "description": "Days Until Close",
+                    "type": "string"
+                  },
+                  "DateFinanceApproved__c": {
+                    "description": "Date Finance Approved",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DateFinanceNotified__c": {
+                    "description": "Date Finance Notified",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "NotifyFinanceDate__c": {
+                    "description": "Notify Days in Finance",
+                    "type": "string"
+                  },
+                  "DB_Competitor__c": {
+                    "description": "DB Competitor",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "IsSoftware__c": {
+                    "description": "IsSoftware",
+                    "type": "boolean"
+                  },
+                  "Gong__Gong_Count__c": {
+                    "description": "Gong Count",
+                    "type": "string"
+                  },
+                  "Gong__MainCompetitors__c": {
+                    "description": "Main Competitor(s)",
+                    "type": "string",
+                    "maxLength": 100
+                  }
+                },
+                "required": [
+                  "AccountId",
+                  "Name",
+                  "StageName",
+                  "CloseDate"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Opportunity created successfully"
+          }
+        }
+      }
+    },
+    "/services/data/v59.0/sobjects/Contact": {
+      "post": {
+        "summary": "Create Contact",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "description": "Contact ID",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "IsDeleted": {
+                    "description": "Deleted",
+                    "type": "boolean"
+                  },
+                  "MasterRecordId": {
+                    "description": "Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "AccountId": {
+                    "description": "Account Name",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Name": {
+                    "description": "Name",
+                    "type": "string",
+                    "maxLength": 121
+                  },
+                  "RecordTypeId": {
+                    "description": "Contact Record Type",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "MailingAddress": {
+                    "description": "Mailing Address",
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "description": "Business Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "Fax": {
+                    "description": "Fax",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "MobilePhone": {
+                    "description": "Mobile Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "ReportsToId": {
+                    "description": "Reports To",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Email": {
+                    "description": "Email",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Title": {
+                    "description": "Title",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "Department": {
+                    "description": "Department",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "CurrencyIsoCode": {
+                    "description": "Contact Currency",
+                    "type": "string",
+                    "maxLength": 3
+                  },
+                  "OwnerId": {
+                    "description": "Contact Owner",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "CreatedDate": {
+                    "description": "Created Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "CreatedById": {
+                    "description": "Created By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "LastModifiedDate": {
+                    "description": "Last Modified Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastModifiedById": {
+                    "description": "Last Modified By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "SystemModstamp": {
+                    "description": "System Modstamp",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastActivityDate": {
+                    "description": "Last Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastCURequestDate": {
+                    "description": "Last Stay-in-Touch Request Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastCUUpdateDate": {
+                    "description": "Last Stay-in-Touch Save Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastViewedDate": {
+                    "description": "Last Viewed Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastReferencedDate": {
+                    "description": "Last Referenced Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "UserRecordAccessId": {
+                    "description": "Object Access Level",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "EmailBouncedReason": {
+                    "description": "Email Bounced Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "EmailBouncedDate": {
+                    "description": "Email Bounced Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "IsEmailBounced": {
+                    "description": "Is Email Bounced",
+                    "type": "boolean"
+                  },
+                  "PhotoUrl": {
+                    "description": "Photo URL",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Jigsaw": {
+                    "description": "Data.com Key",
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "JigsawContactId": {
+                    "description": "Jigsaw Contact Id",
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "IndividualId": {
+                    "description": "Individual",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "IsPriorityRecord": {
+                    "description": "Important",
+                    "type": "boolean"
+                  },
+                  "ContactSource": {
+                    "description": "Creation Source",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "TitleType": {
+                    "description": "Seniority Level",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "DepartmentGroup": {
+                    "description": "Department Group",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "BuyerAttributes": {
+                    "description": "Buyer Attributes",
+                    "type": "string",
+                    "maxLength": 4099
+                  },
+                  "pi__Needs_Score_Synced__c": {
+                    "description": "Needs Score Synced",
+                    "type": "boolean"
+                  },
+                  "pi__Pardot_Last_Scored_At__c": {
+                    "description": "Account Engagement Last Scored At",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__campaign__c": {
+                    "description": "Account Engagement Campaign",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__comments__c": {
+                    "description": "Account Engagement Comments",
+                    "type": "string",
+                    "maxLength": 32000
+                  },
+                  "pi__conversion_date__c": {
+                    "description": "Account Engagement Conversion Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__conversion_object_name__c": {
+                    "description": "Conversion Object Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__conversion_object_type__c": {
+                    "description": "Conversion Object Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__created_date__c": {
+                    "description": "Account Engagement Created Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__first_activity__c": {
+                    "description": "Account Engagement First Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__first_search_term__c": {
+                    "description": "Account Engagement First Referrer Query",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__first_search_type__c": {
+                    "description": "Account Engagement First Referrer Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__first_touch_url__c": {
+                    "description": "Account Engagement First Referrer",
+                    "type": "string",
+                    "maxLength": 65000
+                  },
+                  "pi__grade__c": {
+                    "description": "Account Engagement Grade",
+                    "type": "string",
+                    "maxLength": 10
+                  },
+                  "pi__last_activity__c": {
+                    "description": "Account Engagement Last Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__notes__c": {
+                    "description": "Account Engagement Notes",
+                    "type": "string",
+                    "maxLength": 32000
+                  },
+                  "pi__pardot_hard_bounced__c": {
+                    "description": "Account Engagement Hard Bounced",
+                    "type": "boolean"
+                  },
+                  "pi__score__c": {
+                    "description": "Account Engagement Score",
+                    "type": "string"
+                  },
+                  "pi__url__c": {
+                    "description": "Account Engagement URL",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_campaign__c": {
+                    "description": "Google Analytics Campaign",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_content__c": {
+                    "description": "Google Analytics Content",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_medium__c": {
+                    "description": "Google Analytics Medium",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_source__c": {
+                    "description": "Google Analytics Source",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_term__c": {
+                    "description": "Google Analytics Term",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "qualtrics__Informed_Consent_Date__c": {
+                    "description": "Informed Consent Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "qualtrics__Informed_Consent__c": {
+                    "description": "Informed Consent",
+                    "type": "boolean"
+                  },
+                  "qualtrics__Last_Survey_Invitation__c": {
+                    "description": "Last Survey Invitation",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "qualtrics__Last_Survey_Response__c": {
+                    "description": "Last Survey Response",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "qualtrics__Net_Promoter_Score__c": {
+                    "description": "Net Promoter Score",
+                    "type": "string"
+                  },
+                  "LID__Languages__c": {
+                    "description": "Languages",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "LID__Level__c": {
+                    "description": "Level",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "LID__LinkedIn_Company_Id__c": {
+                    "description": "LinkedIn Company Id",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "LID__LinkedIn_Member_Token__c": {
+                    "description": "LinkedIn Member Token",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "LID__No_longer_at_Company__c": {
+                    "description": "Not at Company Flag",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "LID__Session_Id__c": {
+                    "description": "Session Id",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "Overall_Quality_Img__c": {
+                    "description": "Overall Quality",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "Quality_Score__c": {
+                    "description": "Quality Score",
+                    "type": "string",
+                    "maxLength": 3
+                  },
+                  "SO_Overall_Quality__c": {
+                    "description": "Overall Quality",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Tax_Developments__c": {
+                    "description": "Tax Developments",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Validate_Contact_When_Updated__c": {
+                    "description": "Validate Contact When Updated",
+                    "type": "boolean"
+                  },
+                  "mvp_Alumni_Name__c": {
+                    "description": "Alumni Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Anniversary__c": {
+                    "description": "Anniversary",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Annual_Income__c": {
+                    "description": "Annual Income",
+                    "type": "number",
+                    "maximum": 1e+18
+                  },
+                  "mvp_Business_Phone__c": {
+                    "description": "Business Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "mvp_Children_s_Names__c": {
+                    "description": "Children's Names",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Client_Support_Information_Name__c": {
+                    "description": "Client Support Information Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Client_Support_Information__c": {
+                    "description": "Client Support Information",
+                    "type": "boolean"
+                  },
+                  "mvp_Company_Phone__c": {
+                    "description": "Direct Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "mvp_Contact_Type__c": {
+                    "description": "Contact Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_DXP_Portal_User__c": {
+                    "description": "Ryan.com User",
+                    "type": "boolean"
+                  },
+                  "mvp_Do_not_allow_Bulk_Mails__c": {
+                    "description": "Do not allow Bulk Mails",
+                    "type": "boolean"
+                  },
+                  "mvp_Do_not_allow_Mails__c": {
+                    "description": "Do not allow Mails",
+                    "type": "boolean"
+                  },
+                  "mvp_Do_not_allow_Phone_Calls__c": {
+                    "description": "Do not allow Phone Calls",
+                    "type": "boolean"
+                  },
+                  "mvp_Dynamics_Id__c": {
+                    "description": "Dynamics Id",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "mvp_Education__c": {
+                    "description": "Education",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Gender__c": {
+                    "description": "Gender",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Home_Phone_2__c": {
+                    "description": "Home Phone 2",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "mvp_Manager_Name__c": {
+                    "description": "Manager Name",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_Manager_Phone__c": {
+                    "description": "Manager Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "mvp_Marital_Status__c": {
+                    "description": "Marital Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Newsletter__c": {
+                    "description": "Newsletter",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Pager__c": {
+                    "description": "Pager",
+                    "type": "string",
+                    "maxLength": 50
+                  },
+                  "mvp_Parent_Account__c": {
+                    "description": "Parent Account",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Preferred_Method_of_Contact__c": {
+                    "description": "Preferred Method of Contact",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Relationship_Type__c": {
+                    "description": "Relationship Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Ryan_Alumni__c": {
+                    "description": "Ryan Alumni",
+                    "type": "boolean"
+                  },
+                  "mvp_Salutation_Name__c": {
+                    "description": "Salutation",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Send_Annual_CSE__c": {
+                    "description": "Send Annual CSE",
+                    "type": "boolean"
+                  },
+                  "mvp_Send_Marketing_Materials__c": {
+                    "description": "Send Marketing Materials",
+                    "type": "boolean"
+                  },
+                  "mvp_Spouses_Name__c": {
+                    "description": "Spouse's Name",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "mvp_Status_Reason__c": {
+                    "description": "Status Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Status__c": {
+                    "description": "Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Sync_Address_with_Account__c": {
+                    "description": "Sync Address with Account",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "mvp_Tax_Direct_Expiration_Date__c": {
+                    "description": "Tax Direct Expiration Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "mvp_Use_as_Billing_Contact__c": {
+                    "description": "Available as Billing Contact?",
+                    "type": "boolean"
+                  },
+                  "mvp_Yomi_Full_Name__c": {
+                    "description": "Yomi Full Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "AccountName__c": {
+                    "description": "Account Name",
+                    "type": "string",
+                    "maxLength": 1300
+                  },
+                  "iSell__Avention_ID__c": {
+                    "description": "D&B Contact ID",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "DNBoptimizer__DnBContactRecord__c": {
+                    "description": "ContactToDnB",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "temp_SDM__c": {
+                    "description": "temp_SDM",
+                    "type": "boolean"
+                  },
+                  "DNBConnect__D_B_Connect_Company_Profile__c": {
+                    "description": "D&B Connect Company Profile",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "DNBConnect__D_B_Connect_Contact_Profile__c": {
+                    "description": "D&B Connect Contact Profile",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "DNBConnect__D_B_Contact_Match_Driver__c": {
+                    "description": "D&B Contact Match Driver",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DNBConnect__D_B_Match_Confidence_Code__c": {
+                    "description": "D&B Match Confidence Code",
+                    "type": "string"
+                  },
+                  "DNBConnect__D_B_Match_Data_Profile__c": {
+                    "description": "D&B Match Data Profile",
+                    "type": "string",
+                    "maxLength": 28
+                  },
+                  "DNBConnect__D_B_Match_Grade__c": {
+                    "description": "D&B Match Grade",
+                    "type": "string",
+                    "maxLength": 11
+                  },
+                  "DNBConnect__D_B_Match_Type__c": {
+                    "description": "D&B Match Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DNBConnect__D_B_Name_Match_Score__c": {
+                    "description": "D&B Name Match Score",
+                    "type": "string"
+                  },
+                  "DNBConnect__matchedDuns__c": {
+                    "description": "Matched D-U-N-S",
+                    "type": "string",
+                    "maxLength": 9
+                  },
+                  "Outreach_Actively_Being_Sequenced__c": {
+                    "description": "Actively Being Sequenced",
+                    "type": "boolean"
+                  },
+                  "Outreach_Current_Sequence_ID__c": {
+                    "description": "Current Sequence ID",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Name__c": {
+                    "description": "Current Sequence Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Status__c": {
+                    "description": "Current Sequence Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Step_Number__c": {
+                    "description": "Current Sequence Step Number",
+                    "type": "string"
+                  },
+                  "Outreach_Current_Sequence_Step_Type__c": {
+                    "description": "Current Sequence Step Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Task_Due_Date__c": {
+                    "description": "Current Sequence Task Due Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Outreach_Current_Sequence_User_ID__c": {
+                    "description": "Current Sequence User Integration ID",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Outreach_Date_Added_to_Sequence__c": {
+                    "description": "Date Added to Sequence",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Outreach_Finished_Sequences__c": {
+                    "description": "Finished Sequences",
+                    "type": "string",
+                    "maxLength": 30000
+                  },
+                  "Outreach_Number_of_Active_Sequences__c": {
+                    "description": "Number of Active Sequences",
+                    "type": "string",
+                    "maxLength": 5
+                  },
+                  "Outreach_Number_of_Active_Tasks__c": {
+                    "description": "Number of Active Tasks",
+                    "type": "string"
+                  },
+                  "DOZISF__ZoomInfo_Company_ID__c": {
+                    "description": "ZoomInfo Company ID",
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "DOZISF__ZoomInfo_Enrich_Status__c": {
+                    "description": "ZoomInfo Enrich Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DOZISF__ZoomInfo_First_Updated__c": {
+                    "description": "ZoomInfo First Updated",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DOZISF__ZoomInfo_Id__c": {
+                    "description": "ZoomInfo Contact ID",
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "DOZISF__ZoomInfo_InboxAI_ID__c": {
+                    "description": "ZoomInfo InboxAI ID",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DOZISF__ZoomInfo_Last_Updated__c": {
+                    "description": "ZoomInfo Last Updated",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DOZISF__ZoomInfo_Non_Matched_Reason__c": {
+                    "description": "ZoomInfo Non-Matched Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Gong__Flow_Status__c": {
+                    "description": "Engage Flow Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Gong__Active_Engage_Flow_Names__c": {
+                    "description": "Active Engage Flow Names",
+                    "type": "string",
+                    "maxLength": 32768
+                  },
+                  "Gong__Actively_Being_in_a_Flow__c": {
+                    "description": "Currently in Engage Flow",
+                    "type": "boolean"
+                  },
+                  "Gong__Added_to_Flow_Date__c": {
+                    "description": "Date Added to Engage Flow",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Gong__Current_Flow_ID__c": {
+                    "description": "Engage Flow ID",
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "Gong__Current_Flow_Name__c": {
+                    "description": "Engage Flow Name",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "Gong__Current_Flow_Step_Number__c": {
+                    "description": "Engage Step Number",
+                    "type": "string",
+                    "maxLength": 10
+                  },
+                  "Gong__Current_Flow_Step_Type__c": {
+                    "description": "Engage Step Type",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Current_Flow_Task_Due_Date__c": {
+                    "description": "Engage Step Completion Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Gong__Current_Flow_User_Name__c": {
+                    "description": "Added to Engage Flow By",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Engage_Flow_Owner__c": {
+                    "description": "Engage Flow Owner",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Flow_Execution_ID__c": {
+                    "description": "Engage Step Attempt ID",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Number_of_Active_Engage_Flows__c": {
+                    "description": "Number of Active Engage Flows",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "AccountId"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Contact created successfully"
+          }
+        }
+      }
+    },
+    "/services/data/v59.0/sobjects/Lead": {
+      "post": {
+        "summary": "Create Lead",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "description": "Lead ID",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "IsDeleted": {
+                    "description": "Deleted",
+                    "type": "boolean"
+                  },
+                  "MasterRecordId": {
+                    "description": "Lead",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Name": {
+                    "description": "Name",
+                    "type": "string",
+                    "maxLength": 121
+                  },
+                  "Title": {
+                    "description": "Title",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "Company": {
+                    "description": "Company",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Address": {
+                    "description": "Billing Address",
+                    "type": "string"
+                  },
+                  "Phone": {
+                    "description": "Business Phone",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "MobilePhone": {
+                    "description": "Mobile",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "Fax": {
+                    "description": "Fax",
+                    "type": "string",
+                    "maxLength": 40
+                  },
+                  "Email": {
+                    "description": "Email",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Website": {
+                    "description": "Website",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "PhotoUrl": {
+                    "description": "Photo URL",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "LeadSource": {
+                    "description": "Lead Source",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Status": {
+                    "description": "Lead Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Industry": {
+                    "description": "Industry",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Rating": {
+                    "description": "Rating",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "CurrencyIsoCode": {
+                    "description": "Lead Currency",
+                    "type": "string",
+                    "maxLength": 3
+                  },
+                  "AnnualRevenue": {
+                    "description": "Annual Revenue",
+                    "type": "number",
+                    "maximum": 1e+18
+                  },
+                  "NumberOfEmployees": {
+                    "description": "No. of Employees",
+                    "type": "string"
+                  },
+                  "OwnerId": {
+                    "description": "Lead Owner",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "HasOptedOutOfEmail": {
+                    "description": "Email Opt Out",
+                    "type": "boolean"
+                  },
+                  "IsConverted": {
+                    "description": "Converted",
+                    "type": "boolean"
+                  },
+                  "ConvertedDate": {
+                    "description": "Converted Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "ConvertedAccountId": {
+                    "description": "Converted Account",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "ConvertedContactId": {
+                    "description": "Converted Contact",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "ConvertedOpportunityId": {
+                    "description": "Converted Opportunity",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "IsUnreadByOwner": {
+                    "description": "Unread By Owner",
+                    "type": "boolean"
+                  },
+                  "CreatedDate": {
+                    "description": "Created Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "CreatedById": {
+                    "description": "Created By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "LastModifiedDate": {
+                    "description": "Last Modified Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastModifiedById": {
+                    "description": "Last Modified By",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "SystemModstamp": {
+                    "description": "System Modstamp",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastActivityDate": {
+                    "description": "Last Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DoNotCall": {
+                    "description": "Do Not Call",
+                    "type": "boolean"
+                  },
+                  "CampaignId": {
+                    "description": "Campaign",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "HasOptedOutOfFax": {
+                    "description": "Fax Opt Out",
+                    "type": "boolean"
+                  },
+                  "LastViewedDate": {
+                    "description": "Last Viewed Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LastReferencedDate": {
+                    "description": "Last Referenced Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "UserRecordAccessId": {
+                    "description": "Object Access Level",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "JigsawContactId": {
+                    "description": "Jigsaw Contact Id",
+                    "type": "string",
+                    "maxLength": 20
+                  },
+                  "EmailBouncedReason": {
+                    "description": "Email Bounced Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "EmailBouncedDate": {
+                    "description": "Email Bounced Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "IndividualId": {
+                    "description": "Individual",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "IsPriorityRecord": {
+                    "description": "Important",
+                    "type": "boolean"
+                  },
+                  "pi__Needs_Score_Synced__c": {
+                    "description": "Needs Score Synced",
+                    "type": "boolean"
+                  },
+                  "pi__Pardot_Last_Scored_At__c": {
+                    "description": "Account Engagement Last Scored At",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__campaign__c": {
+                    "description": "Account Engagement Campaign",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__comments__c": {
+                    "description": "Account Engagement Comments",
+                    "type": "string",
+                    "maxLength": 32000
+                  },
+                  "pi__conversion_date__c": {
+                    "description": "Account Engagement Conversion Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__conversion_object_name__c": {
+                    "description": "Conversion Object Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__conversion_object_type__c": {
+                    "description": "Conversion Object Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__created_date__c": {
+                    "description": "Account Engagement Created Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__first_activity__c": {
+                    "description": "Account Engagement First Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__first_search_term__c": {
+                    "description": "Account Engagement First Referrer Query",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__first_search_type__c": {
+                    "description": "Account Engagement First Referrer Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__first_touch_url__c": {
+                    "description": "Account Engagement First Referrer",
+                    "type": "string",
+                    "maxLength": 65000
+                  },
+                  "pi__grade__c": {
+                    "description": "Account Engagement Grade",
+                    "type": "string",
+                    "maxLength": 10
+                  },
+                  "pi__last_activity__c": {
+                    "description": "Account Engagement Last Activity",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "pi__notes__c": {
+                    "description": "Account Engagement Notes",
+                    "type": "string",
+                    "maxLength": 32000
+                  },
+                  "pi__pardot_hard_bounced__c": {
+                    "description": "Account Engagement Hard Bounced",
+                    "type": "boolean"
+                  },
+                  "pi__score__c": {
+                    "description": "Account Engagement Score",
+                    "type": "string"
+                  },
+                  "pi__url__c": {
+                    "description": "Account Engagement URL",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_campaign__c": {
+                    "description": "Google Analytics Campaign",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_content__c": {
+                    "description": "Google Analytics Content",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_medium__c": {
+                    "description": "Google Analytics Medium",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_source__c": {
+                    "description": "Google Analytics Source",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "pi__utm_term__c": {
+                    "description": "Google Analytics Term",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "qualtrics__Last_Survey_Invitation__c": {
+                    "description": "Last Survey Invitation",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "qualtrics__Last_Survey_Response__c": {
+                    "description": "Last Survey Response",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "LID__LinkedIn_Company_Id__c": {
+                    "description": "LinkedIn Company Id",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "LID__LinkedIn_Member_Token__c": {
+                    "description": "LinkedIn Member Token",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "mvp_Account_Conversion_Rejection_Reason__c": {
+                    "description": "Lead Rejection Comments",
+                    "type": "string",
+                    "maxLength": 1000
+                  },
+                  "mvp_Account_Owner__c": {
+                    "description": "Account Owner",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "mvp_Parent_Account__c": {
+                    "description": "Parent Account",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "iSell__OSKeyID__c": {
+                    "description": "D&B ID",
+                    "type": "string",
+                    "maxLength": 16
+                  },
+                  "DB_Created_Date_without_Time__c": {
+                    "description": "DB Created Date without Time",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DB_Lead_Age__c": {
+                    "description": "DB Lead Age",
+                    "type": "string"
+                  },
+                  "DNBoptimizer__DNB_D_U_N_S_Number__c": {
+                    "description": "D&B DUNS Number",
+                    "type": "string",
+                    "maxLength": 9
+                  },
+                  "DNBoptimizer__DnBCompanyRecord__c": {
+                    "description": "LeadToDnB",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "DNBoptimizer__DnBContactRecord__c": {
+                    "description": "LeadContactToDnB",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "zoom_app__IsCreatedByZoomApp__c": {
+                    "description": "IsCreatedByZoomApp",
+                    "type": "boolean"
+                  },
+                  "DNBConnect__D_B_Connect_Company_Profile__c": {
+                    "description": "D&B Connect Company Profile",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "DNBConnect__D_B_Connect_Contact_Profile__c": {
+                    "description": "D&B Connect Contact Profile",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "DNBConnect__D_B_Contact_Match_Driver__c": {
+                    "description": "D&B Contact Match Driver",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DNBConnect__D_B_Match_Confidence_Code__c": {
+                    "description": "D&B Match Confidence Code",
+                    "type": "string"
+                  },
+                  "DNBConnect__D_B_Match_Data_Profile__c": {
+                    "description": "D&B Match Data Profile",
+                    "type": "string",
+                    "maxLength": 28
+                  },
+                  "DNBConnect__D_B_Match_Grade__c": {
+                    "description": "D&B Match Grade",
+                    "type": "string",
+                    "maxLength": 11
+                  },
+                  "DNBConnect__D_B_Match_Type__c": {
+                    "description": "D&B Match Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DNBConnect__D_B_Name_Match_Score__c": {
+                    "description": "D&B Name Match Score",
+                    "type": "string"
+                  },
+                  "DNBConnect__dunsTradedUp__c": {
+                    "description": "D-U-N-S Traded Up",
+                    "type": "boolean"
+                  },
+                  "DNBConnect__matchedDuns__c": {
+                    "description": "Matched D-U-N-S",
+                    "type": "string",
+                    "maxLength": 9
+                  },
+                  "Outreach_Actively_being_sequenced__c": {
+                    "description": "Actively being Sequenced",
+                    "type": "boolean"
+                  },
+                  "Outreach_Current_Sequence_ID__c": {
+                    "description": "Current Sequence ID",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Name__c": {
+                    "description": "Current Sequence Name",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Status__c": {
+                    "description": "Current Sequence Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Step_Number__c": {
+                    "description": "Current Sequence Step Number",
+                    "type": "string"
+                  },
+                  "Outreach_Current_Sequence_Step_Type__c": {
+                    "description": "Current Sequence Step Type",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Outreach_Current_Sequence_Task_Due_Date__c": {
+                    "description": "Current Sequence Task Due Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Outreach_Current_Sequence_User_ID__c": {
+                    "description": "Current Sequence User Integration ID",
+                    "type": "string",
+                    "maxLength": 18
+                  },
+                  "Outreach_Date_Added_to_Sequence__c": {
+                    "description": "Date Added to Sequence",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Outreach_Finished_Sequences__c": {
+                    "description": "Finished Sequences",
+                    "type": "string",
+                    "maxLength": 30000
+                  },
+                  "Outreach_Number_of_Active_Sequences__c": {
+                    "description": "Number of Active Sequences",
+                    "type": "string",
+                    "maxLength": 5
+                  },
+                  "Outreach_Number_of_Active_Tasks__c": {
+                    "description": "Number of Active Tasks",
+                    "type": "string"
+                  },
+                  "DOZISF__ZoomInfo_Company_ID__c": {
+                    "description": "ZoomInfo Company ID",
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "DOZISF__ZoomInfo_Enrich_Status__c": {
+                    "description": "ZoomInfo Enrich Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DOZISF__ZoomInfo_First_Updated__c": {
+                    "description": "ZoomInfo First Updated",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DOZISF__ZoomInfo_Id__c": {
+                    "description": "ZoomInfo Contact ID",
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "DOZISF__ZoomInfo_InboxAI_ID__c": {
+                    "description": "ZoomInfo InboxAI ID",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "DOZISF__ZoomInfo_Last_Updated__c": {
+                    "description": "ZoomInfo Last Updated",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DOZISF__ZoomInfo_Non_Matched_Reason__c": {
+                    "description": "ZoomInfo Non-Matched Reason",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Gong__Flow_Status__c": {
+                    "description": "Engage Flow Status",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "Gong__Active_Engage_Flow_Names__c": {
+                    "description": "Active Engage Flow Names",
+                    "type": "string",
+                    "maxLength": 32768
+                  },
+                  "Gong__Actively_Being_in_a_Flow__c": {
+                    "description": "Currently in Engage Flow",
+                    "type": "boolean"
+                  },
+                  "Gong__Added_to_Flow_Date__c": {
+                    "description": "Date Added to Engage Flow",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Gong__Current_Flow_ID__c": {
+                    "description": "Engage Flow ID",
+                    "type": "string",
+                    "maxLength": 30
+                  },
+                  "Gong__Current_Flow_Name__c": {
+                    "description": "Engage Flow Name",
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "Gong__Current_Flow_Step_Number__c": {
+                    "description": "Engage Step Number",
+                    "type": "string",
+                    "maxLength": 10
+                  },
+                  "Gong__Current_Flow_Step_Type__c": {
+                    "description": "Engage Step Type",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Current_Flow_Task_Due_Date__c": {
+                    "description": "Engage Step Completion Date",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "Gong__Current_Flow_User_Name__c": {
+                    "description": "Added to Engage Flow By",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Engage_Flow_Owner__c": {
+                    "description": "Engage Flow Owner",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Flow_Execution_ID__c": {
+                    "description": "Engage Step Attempt ID",
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "Gong__Number_of_Active_Engage_Flows__c": {
+                    "description": "Number of Active Engage Flows",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "Company"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Lead created successfully"
+          }
+        }
+      }
+    },
+    "/services/data/v59.0/sobjects/Account/{recordId}": {
+      "get": {
+        "summary": "Get Account by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Account to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Account retrieved successfully"
+          },
+          "404": {
+            "description": "Account not found"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Account by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Account to update"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Fields to update for Account"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Account updated successfully"
+          },
+          "404": {
+            "description": "Account not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Account by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Account to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Account deleted successfully"
+          },
+          "404": {
+            "description": "Account not found"
+          }
+        }
+      }
+    },
+    "/services/data/v59.0/sobjects/Opportunity/{recordId}": {
+      "get": {
+        "summary": "Get Opportunity by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Opportunity to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Opportunity retrieved successfully"
+          },
+          "404": {
+            "description": "Opportunity not found"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Opportunity by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Opportunity to update"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Fields to update for Opportunity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Opportunity updated successfully"
+          },
+          "404": {
+            "description": "Opportunity not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Opportunity by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Opportunity to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Opportunity deleted successfully"
+          },
+          "404": {
+            "description": "Opportunity not found"
+          }
+        }
+      }
+    },
+    "/services/data/v59.0/sobjects/Contact/{recordId}": {
+      "get": {
+        "summary": "Get Contact by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Contact to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact retrieved successfully"
+          },
+          "404": {
+            "description": "Contact not found"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Contact by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Contact to update"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Fields to update for Contact"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Contact updated successfully"
+          },
+          "404": {
+            "description": "Contact not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Contact by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Contact to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Contact deleted successfully"
+          },
+          "404": {
+            "description": "Contact not found"
+          }
+        }
+      }
+    },
+    "/services/data/v59.0/sobjects/Lead/{recordId}": {
+      "get": {
+        "summary": "Get Lead by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Lead to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lead retrieved successfully"
+          },
+          "404": {
+            "description": "Lead not found"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Lead by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Lead to update"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Fields to update for Lead"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Lead updated successfully"
+          },
+          "404": {
+            "description": "Lead not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Lead by ID",
+        "parameters": [
+          {
+            "name": "recordId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the Lead to delete"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Lead deleted successfully"
+          },
+          "404": {
+            "description": "Lead not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}
